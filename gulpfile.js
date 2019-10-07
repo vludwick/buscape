@@ -49,10 +49,10 @@ function css() {
 function browserSync() {
     browsersync.init({
         server: {
-            baseDir: "./dist"
+            baseDir: "./"
         },
         port: 8080,
-        startPath: '/index.html',
+        startPath: './index.html',
     });
     gulp.watch("src/**/*.*").on('change', browsersync.reload);
 }
@@ -62,7 +62,7 @@ function html() {
     .pipe(beautify())
     // .pipe(plumber())
 	// .pipe(coffee())
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./'));
 }
 
 function js() {

@@ -194,7 +194,7 @@ $(document).ready(function() {
   });
 
   $("img").on("error", function(event) {
-    $(this).attr("src", "../img/not-found.png");
+    $(this).attr("src", "./dist/img/not-found.png");
   });
 
   $(".produto--descricao>p>a").on("click", function(event) {

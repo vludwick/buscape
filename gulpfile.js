@@ -52,7 +52,7 @@ function browserSync() {
             baseDir: "./dist"
         },
         port: 8080,
-        startPath: '/html/index.html',
+        startPath: '/index.html',
     });
     gulp.watch("src/**/*.*").on('change', browsersync.reload);
 }
@@ -62,7 +62,7 @@ function html() {
     .pipe(beautify())
     // .pipe(plumber())
 	// .pipe(coffee())
-    .pipe(gulp.dest('./dist/html'));
+    .pipe(gulp.dest('./dist'));
 }
 
 function js() {

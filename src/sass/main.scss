@@ -112,14 +112,15 @@ body {
                         padding: 5px;
                         font-size: 12px;
                         border: 1px solid #999;
-                        &:disabled {
-                            background-color: #999;
+                        color: #fff;
+                        &:first-child {
+                            background-color: #d62a33;
+                            &:disabled {
+                                background-color: #999;
+                            }
                         }
-                        &:first-of-type {
-                            color: #ff0000;
-                        }
-                        &:last-of-type {
-                            color: #00ad00;
+                        &:last-child {
+                            background-color: #22B14C;
                         }
                     }
                 }

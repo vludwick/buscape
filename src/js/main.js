@@ -153,8 +153,8 @@ $(document).ready(function() {
             total: produto.price.value * 1
           };
           this.carrinho.push(item);
+          localStorage.setItem("carrinho", JSON.stringify(this.carrinho));
         }
-        localStorage.setItem("carrinho", JSON.stringify(this.carrinho));
       },
       removeItem(index) {
         var items = this.carrinho;
@@ -171,6 +171,7 @@ $(document).ready(function() {
         var item = this.carrinho[index];
         item.qtde += qtde;
         item.total = item.qtde * this.findItem(item.id)[0].price.value;
+        localStorage.setItem("carrinho", JSON.stringify(this.carrinho));
       }
     },
     filters: {

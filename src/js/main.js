@@ -69,6 +69,13 @@ $(document).ready(function() {
       ],
       carrinho: []
     },
+    created: function() {
+      if(JSON.parse(localStorage.getItem("carrinho")) == null) {
+        localStorage.setItem("carrinho", JSON.stringify("[]"));
+      } else if(JSON.parse(localStorage.getItem("carrinho")) != "") {
+        this.carrinho = JSON.parse(localStorage.getItem("carrinho"));
+      }
+    },
     computed: {
       subtotal: function() {
         var total = 0;
@@ -147,10 +154,12 @@ $(document).ready(function() {
           };
           this.carrinho.push(item);
         }
+        localStorage.setItem("carrinho", JSON.stringify(this.carrinho));
       },
       removeItem(index) {
         var items = this.carrinho;
         items.splice(index, 1);
+        localStorage.setItem("carrinho", JSON.stringify(this.carrinho));
       },
       findItem(id) {
         var produto = this.items.filter(item => {
